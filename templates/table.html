@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--<h1>Hello {{ fn }}!</h1>-->
+    <div class="container-fluid">
+        <br>
+        <div class="jumbotron">
+            User List
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% set i=1 %} {% for row in userList %}
+                        <tr>
+                            <td>{{i}}</td>
+                            <td>{{row.username}}</td>
+                            <td>{{row.data.password}}</td>
+                            <td>{{row.data.firstname}}</td>
+                            <td>{{row.data.lastname}}</td>
+                            <td>
+                                <a href="?del={{i-1}}">Delete</a>
+                            </td>
+
+                        </tr>
+                        {% set i+=1 %} {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+        <a href="/" class="btn btn-large btn-block btn-info">Back</a>
+
+    </div>
+    </div>
+
+    <script src="../assets/js/jquery-3.2.1.min.js"></script>
+    <script src="../assets/js/bootstrap.js"></script>
+</body>
+
+</html>
