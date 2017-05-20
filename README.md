@@ -5,3 +5,6 @@ This is my project to learn nodejs
  <li>Swig</li>
  <li>Nodemon</li>
 </ul>
+<code>
+nodemon -e js,html
+</code>
