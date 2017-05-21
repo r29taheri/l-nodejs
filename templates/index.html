@@ -7,57 +7,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <title>Document</title>
+    <style>
+        p {
+            word-break: break-word;
+        }
+    </style>
 </head>
 
 <body>
     <!--<h1>Hello {{ fn }}!</h1>-->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">NodeJS</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="/register">Register</a></li>
+                <li><a href="/post">Send Post</a></li>
+                <li><a href="/userlist">Show users</a></li>
+
+            </ul>
+        </div>
+    </nav>
     <div class="container-fluid">
         <br>
         <div class="jumbotron">
-            Register
+            <h1 class="text-center">Hello World!</h1>
         </div>
         <div class="row">
-            <form method="get" action="">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <label for="username">Username:</label>
-                        <input type="text" class="form-control" id="username" name="username" required>
+            <div class="col-sm-12">
+                {% for post in content %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {{post.title}}
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
+                    <div class="panel-body">
+                        <p>
+                            {{post.content}}
+                        </p>
                     </div>
-                    <div class="form-group">
-                        <label for="firstname">First Name:</label>
-                        <input type="text" class="form-control" id="firstname" name="firstname" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastname">Last Name:</label>
-                        <input type="text" class="form-control" id="lastname" name="lastname" required>
-                    </div>
-                    {% if status %}
-                    <h4 class="text-success">
-                        {{status}}
-                    </h4>
-                    {% endif %}
                 </div>
-
-                <div class="col-sm-6">
-                    <div class="form-group">
-
-                        <input type="submit" name="btnReg" value="Register" class="btn btn-large btn-block btn-success">
-                    </div>
-
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-
-                        <a href="/userlist" class="btn btn-large btn-block btn-info">Show users</a>
-
-                    </div>
-
-                </div>
-            </form>
+                {% endfor %}
+            </div>
         </div>
     </div>
 

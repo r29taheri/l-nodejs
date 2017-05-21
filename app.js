@@ -13,8 +13,12 @@ app.set('views', __dirname + '/templates');
 
 
 var userList = new Array();
-
+var content = new Array();
 app.get('/', function(req, res) {
+
+    res.render('index', { 'content': content })
+});
+app.get('/register', function(req, res) {
     // var data = { 'fn': 'Reza' };
     var data = {};
     if (req.query.btnReg) {
@@ -43,7 +47,7 @@ app.get('/', function(req, res) {
         console.log(userList);
 
     }
-    res.render('index', data);
+    res.render('register', data);
 });
 app.get('/userlist', function(req, res) {
     if (req.query.del) {
@@ -52,4 +56,16 @@ app.get('/userlist', function(req, res) {
         res.redirect('/userlist?msg=ok');
     } else
         res.render('table', { 'userList': userList });
+});
+app.get('/post', function(req, res) {
+    var data = {}
+    if (req.query.btnPost) {
+        var post = {};
+        post['title'] = req.query.title;
+        post['content'] = req.query.content;
+        content.push(post);
+    }
+    console.log(content);
+
+    res.render('content', content);
 });

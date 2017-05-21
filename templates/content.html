@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--<h1>Hello {{ fn }}!</h1>-->
+    <div class="container-fluid">
+        <br>
+        <div class="jumbotron">
+            <h1 class="text-center">Hello World!</h1>
+        </div>
+        <div class="row">
+            <form method="get" action="">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="username">Title:</label>
+                        <input type="text" class="form-control" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Post:</label>
+                        <textarea class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
+                    </div>
+
+
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+
+                        <input type="submit" name="btnPost" value="Send" class="btn btn-large btn-block btn-success">
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+
+                        <a href="/" class="btn btn-large btn-block btn-info">Back</a>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../assets/js/jquery-3.2.1.min.js"></script>
+    <script src="../assets/js/bootstrap.js"></script>
+</body>
+
+</html>
