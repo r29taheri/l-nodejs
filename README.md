@@ -7,10 +7,13 @@ This is my project to learn nodejs
 </ul>
 <code>
 npm install express --save
-</code>
+</code><br>
 <code>
 npm install swig --save
-</code>
+</code><br>
+<code>
+npm install body-parser --save
+</code><br>
 <code>
 nodemon -e js,html
-</code>
+</code><br>
