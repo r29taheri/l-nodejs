@@ -45,13 +45,13 @@
                     <tbody>
                         {% set i=1 %} {% for row in userList %}
                         <tr>
-                            <td>{{i}}</td>
+                            <td>{{row.id}}</td>
                             <td>{{row.username}}</td>
-                            <td>{{row.data.password}}</td>
-                            <td>{{row.data.firstname}}</td>
-                            <td>{{row.data.lastname}}</td>
+                            <td>{{row.password}}</td>
+                            <td>{{row.firstname}}</td>
+                            <td>{{row.lastname}}</td>
                             <td>
-                                <a href="?del={{i-1}}">Delete</a>
+                                <a href="?del={{row.id}}">Delete</a>
                             </td>
 
                         </tr>
